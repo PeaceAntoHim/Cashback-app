@@ -1,0 +1,30 @@
+{
+  "version": 2,
+  "scope": "cashbacc",
+  "env": {
+    "GA_TRACKING_ID": "@ga-tracking-id",
+    "CASHBACC_FIREBASE_CLIENT_BASE64": "@cashbacc-firebase-client-base64"
+  },
+  "build": {
+    "env": {
+      "GA_TRACKING_ID": "@ga-tracking-id",
+      "CASHBACC_FIREBASE_CLIENT_BASE64": "@cashbacc-firebase-client-base64"
+    }
+  },
+  "routes": [
+    {
+      "src": "^/service-worker.js$",
+      "dest": "/_next/static/service-worker.js",
+      "headers": {
+        "cache-control": "public, max-age=43200, immutable",
+        "Service-Worker-Allowed": "/"
+      }
+    }
+  ],
+  "builds": [
+    {
+      "src": "next.config.js",
+      "use": "@now/next"
+    }
+  ]
+}
